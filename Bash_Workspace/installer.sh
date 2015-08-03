@@ -21,6 +21,7 @@ else
 fi
 
 #Add repositories
+sudo add-apt-repository --yes ppa:webupd8team/java
 sudo add-apt-repository --yes ppa:webupd8team/sublime-text-2
 
 #Update and Upgrade
@@ -32,7 +33,7 @@ $install vlc
 #Languages
 $install gcc #C
 $install g++ #C++
-$install default-jdk #Java
+$install oracle-java8-installer #Java
 $install python3 && $install idle3 #Python and Python IDLE
 $install perl
 
