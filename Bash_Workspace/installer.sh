@@ -67,6 +67,7 @@ git config --global alias.s 'status --short' #Alternative to git status
 git config --global alias.edit 'config --global --edit' #Edit config page in default editor
 git config --global alias.restart 'reset --hard' #Resets to last commit
 git config --global alias.rewind 'reset HEAD~' #Undoes last commit
+git config --global alias.root 'rev-parse --show-toplevel' #Path to top of git repo
 
 #IDEs
 $install qtcreator
