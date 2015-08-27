@@ -22,7 +22,7 @@ fi
 
 #Add repositories
 sudo add-apt-repository --yes ppa:webupd8team/java
-sudo add-apt-repository --yes ppa:webupd8team/sublime-text-2
+sudo add-apt-repository --yes ppa:webupd8team/atom
 
 #Update and Upgrade
 $pack_man update && $pack_man upgrade
@@ -49,7 +49,8 @@ if [ $lang_pack != 0 ]; then
 fi
 
 #Development
-$install sublime-text
+$install vim
+$install atom
 $install filezilla
 $install texlive #LaTeX
 $install doxygen
@@ -60,7 +61,7 @@ $install doxygen-gui #Doxywizard
 $install git
 git config --global user.name 'Tyler Alterio'
 git config --global user.email 'tyalt1@gmail.com'
-git config --global core.editor sublime-text
+git config --global core.editor vim
 git config --global push.default current
 git config --global alias.ls 'log --decorate --oneline --graph --all' #Alternative to git log
 git config --global alias.s 'status --short' #Alternative to git status
