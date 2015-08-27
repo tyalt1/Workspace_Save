@@ -6,7 +6,6 @@ General programming work space.
 
 | File         | Description |
 |:------------:|:--------------------------------------|
-| bashrc-cp.sh | A backup of .bashrc file. |
 | installer.sh | Installer script for linux programs. |
 
 ###C_Workspace:
