@@ -13,8 +13,8 @@ while getopts ":l" o; do
 done
 
 if [ -n `command -v apt-get` ]; then
-	pack_man='sudo apt-get --yes --quiet'
-	install="$pack_man install"
+	pack_man='sudo apt-get'
+	install="$pack_man install --yes --quiet"
 else
 	echo 'Error: Could not find apt-get.' >& 2 # Print error message into stderr
 	exit 1
@@ -36,6 +36,7 @@ $install g++ #C++
 $install oracle-java8-installer #Java
 $install python3 && $install idle3 #Python and Python IDLE
 $install perl
+$install leiningen #Leiningen build of Clojure
 
 #Bonus Languages
 if [ $lang_pack != 0 ]; then
@@ -43,19 +44,23 @@ if [ $lang_pack != 0 ]; then
 	$install gprolog #GNU Prolog
 	$install scala
 	$install erlang
-	$install leiningen #Leiningen build of Clojure
 	$install haskell-platform #Haskell
 	$install r-base #R statistical language
 fi
 
 #Development
 $install vim
-$install atom
 $install filezilla
 $install texlive #LaTeX
 $install doxygen
 $install doxygen-doc #Doxygen Documentation
 $install doxygen-gui #Doxywizard
+
+#Atom
+$install atom
+apm install minimap
+apm install atom-paredit
+apm install linter-clojure
 
 #Git
 $install git
