@@ -60,7 +60,9 @@ $install doxygen-gui #Doxywizard
 $install atom
 apm install minimap
 apm install atom-paredit
-apm install linter-clojure
+apm install language-clojure
+apm install language-latex
+apm install language-llvm
 
 #Git
 $install git
