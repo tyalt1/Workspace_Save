@@ -1,17 +1,6 @@
 #!/bin/bash
 
-#Init variables
-lang_pack=0
-
-#Check Flags
-# Flags
-# -l Turns on the optional language packages.
-while getopts ":l" o; do
-	case ${o} in
-		l) lang_pack=1;;
-	esac
-done
-
+#Resolve package manager
 if [ -n `command -v apt-get` ]; then
 	pack_man='sudo apt-get'
 	install="$pack_man install --yes --quiet"
@@ -23,12 +12,16 @@ fi
 #Add repositories
 sudo add-apt-repository --yes ppa:webupd8team/java
 sudo add-apt-repository --yes ppa:webupd8team/atom
+#Spotify repository
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
+echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 
 #Update and Upgrade
-$pack_man update && $pack_man upgrade
+$pack_man update --yes && $pack_man upgrade --yes
 
 #Media
 $install vlc
+$install spotify-client
 
 #Languages
 $install gcc #C
@@ -39,14 +32,12 @@ $install perl
 $install leiningen #Leiningen build of Clojure
 
 #Bonus Languages
-if [ $lang_pack != 0 ]; then
-	$install ruby
-	$install gprolog #GNU Prolog
-	$install scala
-	$install erlang
-	$install haskell-platform #Haskell
-	$install r-base #R statistical language
-fi
+$install ruby
+$install gprolog #GNU Prolog
+$install scala
+$install erlang
+$install haskell-platform #Haskell
+$install r-base #R statistical language
 
 #Development
 $install vim
