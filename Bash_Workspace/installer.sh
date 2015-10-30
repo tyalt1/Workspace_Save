@@ -50,10 +50,15 @@ $install doxygen-gui #Doxywizard
 #Atom
 $install atom
 apm install minimap
+apm install merge-conflicts
 apm install atom-paredit
+apm install language-python
+apm install autocomplete-python
 apm install language-clojure
+apm install linter-clojure
 apm install language-latex
 apm install language-llvm
+language-doxygen
 
 #Git
 $install git
