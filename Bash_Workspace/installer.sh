@@ -58,7 +58,7 @@ apm install language-clojure
 apm install linter-clojure
 apm install language-latex
 apm install language-llvm
-language-doxygen
+apm install language-doxygen
 
 #Git
 $install git
