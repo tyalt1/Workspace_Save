@@ -74,5 +74,6 @@ git config --global alias.rewind 'reset HEAD~' #Undoes last commit
 git config --global alias.root 'rev-parse --show-toplevel' #Path to top of git repo
 
 #IDEs
+$install arduino
 $install qtcreator
 $install codeblocks
