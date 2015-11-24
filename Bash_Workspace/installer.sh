@@ -39,6 +39,8 @@ $install haskell-platform #Haskell
 $install r-base #R statistical language
 
 #Development
+$install tree #ls alternative
+$install terminator #terminal emulator
 $install vim
 $install filezilla
 $install texlive #LaTeX
