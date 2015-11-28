@@ -24,10 +24,9 @@ $install vlc
 $install spotify-client
 
 #Languages
-$install gcc #C
-$install g++ #C++
+$install gcc g++ #C and C++
 $install oracle-java8-installer #Java
-$install python3 && $install idle3 #Python and Python IDLE
+$install python idle python3 idle3 #Python and Python IDLE
 $install perl
 $install leiningen #Leiningen build of Clojure
 
@@ -43,9 +42,7 @@ $install r-base #R statistical language
 $install vim
 $install filezilla
 $install texlive #LaTeX
-$install doxygen
-$install doxygen-doc #Doxygen Documentation
-$install doxygen-gui #Doxywizard
+$install doxygen doxygen-doc doxygen-gui #Doxygen, Docs, and Doxywizard
 
 #Atom
 $install atom
