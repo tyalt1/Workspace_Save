@@ -1,13 +1,18 @@
 #!/bin/bash
 
 #Resolve package manager
-if [ -n `command -v apt-get` ]; then
-	pack_man='sudo apt-get'
-	install="$pack_man install --yes --quiet"
-else
+if [ -z $(command -v apt-get) ]; then
 	echo 'Error: Could not find apt-get.' >& 2 # Print error message into stderr
 	exit 1
 fi
+
+#Resolve root access
+if [ $(id -u) != 0 ]; then
+	echo 'Error: Must be run as root' >& 2
+	exit 1
+fi
+
+install='apt-get install --yes --quiet'
 
 #Add repositories
 sudo add-apt-repository --yes ppa:webupd8team/java
@@ -17,7 +22,7 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 
 #Update and Upgrade
-$pack_man update --yes && $pack_man upgrade --yes
+apt-get update --yes && apt-get upgrade --yes
 
 #Media
 $install vlc
@@ -50,11 +55,8 @@ $install doxygen doxygen-doc doxygen-gui #Doxygen, Docs, and Doxywizard
 $install atom
 apm install minimap
 apm install merge-conflicts
-apm install atom-paredit
-apm install language-python
-apm install autocomplete-python
-apm install language-clojure
-apm install linter-clojure
+apm install atom-paredit language-clojure linter-clojure #Clojure Utility
+apm install language-python autocomplete-python #Python Utility
 apm install language-latex
 apm install language-llvm
 apm install language-doxygen
