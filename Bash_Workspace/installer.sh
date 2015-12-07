@@ -27,6 +27,7 @@ apt-get update --yes && apt-get upgrade --yes
 #Media
 $install vlc
 $install spotify-client
+$install chromium-browser
 
 #Languages
 $install gcc g++ #C and C++
