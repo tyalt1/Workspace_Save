@@ -61,6 +61,7 @@ apm install language-python autocomplete-python #Python Utility
 apm install language-latex
 apm install language-llvm
 apm install language-doxygen
+apm install language-arduino
 
 #Git
 $install git
