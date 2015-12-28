@@ -8,18 +8,19 @@ fi
 
 #Resolve root access
 if [ $(id -u) != 0 ]; then
-	echo 'Error: Must be run as root' >& 2
+	echo 'Error: Must be run as root.' >& 2
 	exit 1
 fi
 
 install='apt-get install --yes --quiet'
 
 #Add repositories
-sudo add-apt-repository --yes ppa:webupd8team/java
-sudo add-apt-repository --yes ppa:webupd8team/atom
+add-apt-repository --yes ppa:webupd8team/java
+add-apt-repository --yes ppa:webupd8team/atom
+
 #Spotify repository
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
-echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
+echo deb http://repository.spotify.com stable non-free | tee /etc/apt/sources.list.d/spotify.list
 
 #Update and Upgrade
 apt-get update --yes && apt-get upgrade --yes
