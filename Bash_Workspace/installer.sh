@@ -17,6 +17,7 @@ install='apt-get install --yes --quiet'
 #Add repositories
 add-apt-repository --yes ppa:webupd8team/java
 add-apt-repository --yes ppa:webupd8team/atom
+add-apt-repository --yes ppa:libretro/stable
 
 #Spotify repository
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
@@ -29,6 +30,7 @@ apt-get update --yes && apt-get upgrade --yes
 $install vlc
 $install spotify-client
 $install chromium-browser
+$install retroarch retroarch-* libretro-* #Emulation
 
 #Languages
 $install gcc g++ #C and C++
