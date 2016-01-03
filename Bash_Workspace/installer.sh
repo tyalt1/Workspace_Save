@@ -35,7 +35,7 @@ $install retroarch retroarch-* libretro-* #Emulation
 #Languages
 $install gcc g++ #C and C++
 $install oracle-java8-installer #Java
-$install python idle python3 idle3 #Python and Python IDLE
+$install python idle python3 idle3 python-pip python3-pip #Python and Python IDLE
 $install perl
 $install leiningen #Leiningen build of Clojure
 
