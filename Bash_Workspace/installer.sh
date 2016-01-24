@@ -65,6 +65,7 @@ apm install language-latex
 apm install language-llvm
 apm install language-doxygen
 apm install language-arduino
+apm install language-docker
 
 #Git
 $install git
