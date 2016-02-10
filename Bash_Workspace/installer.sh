@@ -24,7 +24,9 @@ apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 echo deb http://repository.spotify.com stable non-free | tee /etc/apt/sources.list.d/spotify.list
 
 #Update and Upgrade
-apt-get update --yes && apt-get upgrade --yes
+apt-get update --yes
+apt-get upgrade --yes
+apt-get autoremove --yes
 
 #Media
 $install vlc
@@ -61,6 +63,7 @@ apm install minimap
 apm install merge-conflicts
 apm install atom-paredit language-clojure linter-clojure #Clojure Utility
 apm install language-python autocomplete-python #Python Utility
+apm install linter-gcc #C/C++ Utility
 apm install language-latex
 apm install language-llvm
 apm install language-doxygen
