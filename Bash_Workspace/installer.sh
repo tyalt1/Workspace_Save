@@ -28,16 +28,17 @@ apt-get update --yes
 apt-get upgrade --yes
 apt-get autoremove --yes
 
-#Media
+#Media/Games
 $install vlc
 $install spotify-client
 $install chromium-browser
 $install retroarch retroarch-* libretro-* #Emulation
 
 #Languages
-$install gcc g++ #C and C++
+$install build-essential #gcc, g++, make, and some libs
 $install oracle-java8-installer #Java
-$install python idle python3 idle3 python-pip python3-pip #Python and Python IDLE
+$install python idle python-pip #Python 2
+$install python3 idle3 python3-pip #Python 3
 $install perl
 $install leiningen #Leiningen build of Clojure
 
