@@ -57,6 +57,7 @@ $install vim
 $install filezilla
 $install texlive #LaTeX
 $install doxygen doxygen-doc doxygen-gui #Doxygen, Docs, and Doxywizard
+wget -qO- https://get.docker.com/ | sh #Docker (Add user to docker group with `sudo usermod -aG docker <user-here>`)
 
 #Atom
 $install atom
