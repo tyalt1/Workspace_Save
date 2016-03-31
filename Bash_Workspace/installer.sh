@@ -61,7 +61,7 @@ wget -qO- https://get.docker.com/ | sh #Docker (Add user to docker group with `s
 
 #Atom
 $install atom
-apm install minimap pdf-view
+apm install minimap pdf-view todo
 apm install merge-conflicts
 apm install atom-paredit language-clojure linter-clojure #Clojure Utility
 apm install language-python autocomplete-python #Python Utility
