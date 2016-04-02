@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Resolve package manager
-if [ -z $(command -v apt-get) ]; then
+if [ -z $(which apt-get) ]; then
 	echo 'Error: Could not find apt-get.' >& 2 # Print error message into stderr
 	exit 1
 fi
@@ -57,7 +57,11 @@ $install vim
 $install filezilla
 $install texlive #LaTeX
 $install doxygen doxygen-doc doxygen-gui #Doxygen, Docs, and Doxywizard
-wget -qO- https://get.docker.com/ | sh #Docker (Add user to docker group with `sudo usermod -aG docker <user-here>`)
+if [ -z $(which docker) ]; then
+	#Install Docker if not already installed.
+	#Add user to docker group with `sudo usermod -aG docker <user-here>`
+	wget -qO- https://get.docker.com/ | sh
+fi
 
 #Atom
 $install atom
@@ -66,11 +70,9 @@ apm install merge-conflicts
 apm install atom-paredit language-clojure linter-clojure #Clojure Utility
 apm install language-python autocomplete-python #Python Utility
 apm install linter-gcc #C/C++ Utility
-apm install language-latex
-apm install language-llvm
-apm install language-doxygen
-apm install language-arduino
-apm install language-docker
+apm install language-erlang language-elixir #Erlang
+apm install language-latex language-llvm language-doxygen \
+						language-arduino language-docker
 
 #Git
 $install git
