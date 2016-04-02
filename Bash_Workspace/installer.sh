@@ -12,7 +12,8 @@ if [ $(id -u) != 0 ]; then
 	exit 1
 fi
 
-install='apt-get install --yes --quiet'
+flags='--yes --quiet'
+install="apt-get install $flags"
 
 #Add repositories
 add-apt-repository --yes ppa:webupd8team/java
@@ -24,9 +25,8 @@ apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 echo deb http://repository.spotify.com stable non-free | tee /etc/apt/sources.list.d/spotify.list
 
 #Update and Upgrade
-apt-get update --yes
-apt-get upgrade --yes
-apt-get autoremove --yes
+apt-get update $flags && apt-get upgrade $flags
+apt-get autoremove $flags
 
 #Media/Games
 $install vlc
