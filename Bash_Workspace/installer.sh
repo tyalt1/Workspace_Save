@@ -51,6 +51,7 @@ $install haskell-platform #Haskell
 $install r-base #R statistical language
 
 #Development
+$install i3 #tiling window manager
 $install tree #ls alternative
 $install terminator #terminal emulator
 $install vim
