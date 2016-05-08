@@ -49,6 +49,7 @@ $install scala
 $install erlang
 $install haskell-platform #Haskell
 $install r-base #R statistical language
+$install elixir
 
 #Development
 $install i3 #tiling window manager
