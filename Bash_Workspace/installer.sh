@@ -71,10 +71,9 @@ apm install minimap pdf-view todo merge-conflicts #Utility
 apm install atom-paredit language-clojure linter-clojure #Clojure Utility
 apm install language-python autocomplete-python #Python Utility
 apm install language-c linter-gcc #C/C++ Utility
-apm install language-erlang autocomplete-erlang \  #Erlang
-						language-elixir atom-elixir
-apm install language-latex language-llvm language-doxygen \
-						language-arduino language-docker
+apm install language-erlang autocomplete-erlang #Erlang
+apm install	language-elixir atom-elixir #Elixir
+apm install language-arduino language-docker language-doxygen language-latex language-llvm
 
 #Git
 $install git
