@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Resolve package manager
-if [ -z $(which apt-get) ]; then
+if [ -z $(command -v apt-get) ]; then
 	echo 'Error: Could not find apt-get.' >& 2 # Print error message into stderr
 	exit 1
 fi
@@ -16,7 +16,7 @@ flags='--yes --quiet'
 install="apt-get install $flags"
 
 #Add repositories
-add-apt-repository --yes ppa:webupd8team/java
+add-apt-repository --yes ppa:webupd8team/java #will still ask for yes/no to install
 add-apt-repository --yes ppa:webupd8team/atom
 add-apt-repository --yes ppa:libretro/stable
 
@@ -32,7 +32,7 @@ apt-get autoremove $flags
 $install vlc
 $install spotify-client
 $install chromium-browser
-$install retroarch retroarch-* libretro-* #Emulation
+# $install retroarch retroarch-* libretro-* #Emulation
 
 #Languages
 $install build-essential #gcc, g++, make, and some libs
@@ -41,15 +41,14 @@ $install python idle python-pip #Python 2
 $install python3 idle3 python3-pip #Python 3
 $install perl
 $install leiningen #Leiningen build of Clojure
+$install erlang elixir
 
 #Bonus Languages
 $install ruby
 $install gprolog #GNU Prolog
 $install scala
-$install erlang
 $install haskell-platform #Haskell
 $install r-base #R statistical language
-$install elixir
 
 #Development
 $install i3 #tiling window manager
@@ -59,7 +58,7 @@ $install vim
 $install filezilla
 $install texlive #LaTeX
 $install doxygen doxygen-doc doxygen-gui #Doxygen, Docs, and Doxywizard
-if [ -z $(which docker) ]; then
+if [ -z $(command -v docker) ]; then
 	#Install Docker if not already installed.
 	#Add user to docker group with `sudo usermod -aG docker <user-here>`
 	wget -qO- https://get.docker.com/ | sh
@@ -72,7 +71,7 @@ apm install atom-paredit language-clojure linter-clojure #Clojure Utility
 apm install language-python autocomplete-python #Python Utility
 apm install language-c linter-gcc #C/C++ Utility
 apm install language-erlang autocomplete-erlang #Erlang
-apm install	language-elixir atom-elixir #Elixir
+apm install language-elixir atom-elixir #Elixir
 apm install language-arduino language-docker language-doxygen language-latex language-llvm
 
 #Git
@@ -86,7 +85,6 @@ git config --global alias.s 'status --short' #Alternative to git status
 git config --global alias.edit 'config --global --edit' #Edit config page in default editor
 git config --global alias.restart 'reset --hard' #Resets to last commit
 git config --global alias.rewind 'reset HEAD~' #Undoes last commit
-git config --global alias.root 'rev-parse --show-toplevel' #Path to top of git repo
 
 #IDEs
 $install arduino
