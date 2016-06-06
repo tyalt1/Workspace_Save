@@ -67,12 +67,10 @@ fi
 #Atom
 $install atom
 apm install minimap pdf-view todo merge-conflicts script #Utility
-apm install atom-paredit language-clojure linter-clojure #Clojure Utility
-apm install language-python autocomplete-python #Python Utility
-apm install language-c linter-gcc #C/C++ Utility
-apm install language-erlang autocomplete-erlang #Erlang
-apm install language-elixir atom-elixir #Elixir
-apm install language-arduino language-docker language-doxygen language-latex language-llvm
+amp install atom-paredit linter-gcc
+amp install language-{c,clojure,python,erlang,erlixir} #Lang
+amp install autocomplete-{python, erlang, elixir} #Autocomplete
+apm install language-{arduino,docker,doxygen,latex,llvm} #DSL
 
 #Git
 $install git
