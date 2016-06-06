@@ -66,7 +66,7 @@ fi
 
 #Atom
 $install atom
-apm install minimap pdf-view todo merge-conflicts #Utility
+apm install minimap pdf-view todo merge-conflicts script #Utility
 apm install atom-paredit language-clojure linter-clojure #Clojure Utility
 apm install language-python autocomplete-python #Python Utility
 apm install language-c linter-gcc #C/C++ Utility
