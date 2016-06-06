@@ -68,8 +68,8 @@ fi
 $install atom
 apm install minimap pdf-view todo merge-conflicts script #Utility
 amp install atom-paredit linter-gcc
-amp install language-{c,clojure,python,erlang,erlixir} #Lang
-amp install autocomplete-{python, erlang, elixir} #Autocomplete
+apm install language-{c,clojure,python,erlang,elixir} #Lang
+apm install autocomplete-{python,erlang,elixir} #Autocomplete
 apm install language-{arduino,docker,doxygen,latex,llvm} #DSL
 
 #Git
