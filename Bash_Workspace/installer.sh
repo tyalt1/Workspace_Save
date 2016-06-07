@@ -37,8 +37,7 @@ $install chromium-browser
 #Languages
 $install build-essential #gcc, g++, make, and some libs
 $install oracle-java8-installer #Java
-$install python idle python-pip #Python 2
-$install python3 idle3 python3-pip #Python 3
+$install python{,3} idle{,3} python-pip #Python
 $install perl
 $install leiningen #Leiningen build of Clojure
 $install erlang elixir
