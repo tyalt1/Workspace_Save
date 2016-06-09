@@ -55,6 +55,7 @@ if [ -z $(command -v docker) ]; then
 	#Add user to docker group with `sudo usermod -aG docker <user-here>`
 	wget -qO- https://get.docker.com/ | sh
 fi
+wget -O /bin/rebar3 https://s3.amazonaws.com/rebar3/rebar3 && chmod +x /bin/rebar3 #Erlang build tool
 
 #Atom
 $install atom
