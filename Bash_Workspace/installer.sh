@@ -42,13 +42,6 @@ $install perl
 $install leiningen #Leiningen build of Clojure
 $install erlang elixir
 
-#Bonus Languages
-$install ruby
-$install gprolog #GNU Prolog
-$install scala
-$install haskell-platform #Haskell
-$install r-base #R statistical language
-
 #Development
 $install i3 #tiling window manager
 $install tree #ls alternative
@@ -68,7 +61,7 @@ $install atom
 apm install minimap pdf-view todo merge-conflicts script #Utility
 amp install atom-paredit linter-gcc
 apm install language-{c,clojure,python,erlang,elixir} #Lang
-apm install autocomplete-{python,erlang,elixir} #Autocomplete
+apm install autocomplete-{python,erlang} atom-elixir #Autocomplete
 apm install language-{arduino,docker,doxygen,latex,llvm} #DSL
 
 #Git
