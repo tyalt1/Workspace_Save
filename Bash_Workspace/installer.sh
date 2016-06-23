@@ -20,6 +20,9 @@ add-apt-repository --yes ppa:webupd8team/java #will still ask for yes/no to inst
 add-apt-repository --yes ppa:webupd8team/atom
 add-apt-repository --yes ppa:libretro/stable
 
+#Erlang Solution repository
+wget -O /tmp/erlang-solutions.deb https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && dpkg -i /tmp/erlang-solutions.deb
+
 #Spotify repository
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 echo deb http://repository.spotify.com stable non-free | tee /etc/apt/sources.list.d/spotify.list
@@ -40,10 +43,7 @@ $install oracle-java8-installer #Java
 $install python{,3} idle{,3} python-pip #Python
 $install perl
 $install leiningen #Leiningen build of Clojure
-
-#Use Erlang Solutions repos
-wget -O /tmp/erlang-solutions.deb https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && dpkg -i /tmp/erlang-solutions.deb
-$install esl-erlang elixir
+$install esl-erlang elixir #Erlang/Elixir (from Erlang Solutions)
 
 #Development
 $install i3 #tiling window manager
