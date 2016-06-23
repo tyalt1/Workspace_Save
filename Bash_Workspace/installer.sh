@@ -40,7 +40,10 @@ $install oracle-java8-installer #Java
 $install python{,3} idle{,3} python-pip #Python
 $install perl
 $install leiningen #Leiningen build of Clojure
-$install erlang elixir
+
+#Use Erlang Solutions repos
+wget -O /tmp/erlang-solutions.deb https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && dpkg -i /tmp/erlang-solutions.deb
+$install esl-erlang elixir
 
 #Development
 $install i3 #tiling window manager
