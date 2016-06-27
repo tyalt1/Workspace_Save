@@ -15,13 +15,17 @@ fi
 flags='--yes --quiet'
 install="apt-get install $flags"
 
+ERLANGURL=https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb
+DOKCERURL=https://get.docker.com/
+REBARURL=https://s3.amazonaws.com/rebar3/rebar3
+
 #Add repositories
 add-apt-repository --yes ppa:webupd8team/java #will still ask for yes/no to install
 add-apt-repository --yes ppa:webupd8team/atom
 add-apt-repository --yes ppa:libretro/stable
 
 #Erlang Solution repository
-wget -O /tmp/erlang-solutions.deb https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && dpkg -i /tmp/erlang-solutions.deb
+wget -O /tmp/erlang-solutions.deb $ERLANGURL && dpkg -i /tmp/erlang-solutions.deb
 
 #Spotify repository
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
@@ -56,9 +60,9 @@ $install doxygen doxygen-doc doxygen-gui #Doxygen, Docs, and Doxywizard
 if [ -z $(command -v docker) ]; then
 	#Install Docker if not already installed.
 	#Add user to docker group with `sudo usermod -aG docker <user-here>`
-	wget -qO- https://get.docker.com/ | sh
+	wget -qO- $DOCKERURL | sh
 fi
-wget -O /bin/rebar3 https://s3.amazonaws.com/rebar3/rebar3 && chmod +x /bin/rebar3 #Erlang build tool
+wget -O /bin/rebar3 $REBARURL && chmod +x /bin/rebar3 #Erlang build tool
 
 #Atom
 $install atom
