@@ -15,6 +15,7 @@ fi
 flags='--yes --quiet'
 install="apt-get install $flags"
 
+LEINURL=https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
 ERLANGURL=https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb
 DOKCERURL=https://get.docker.com/
 REBARURL=https://s3.amazonaws.com/rebar3/rebar3
@@ -46,7 +47,7 @@ $install build-essential #gcc, g++, make, and some libs
 $install oracle-java8-installer #Java
 $install python{,3} idle{,3} python-pip #Python
 $install perl
-$install leiningen #Leiningen build of Clojure
+wget -qO- $LEINURL | sh #Leiningen build of Clojure
 $install esl-erlang elixir #Erlang/Elixir (from Erlang Solutions)
 
 #Development
