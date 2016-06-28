@@ -47,7 +47,7 @@ $install build-essential #gcc, g++, make, and some libs
 $install oracle-java8-installer #Java
 $install python{,3} idle{,3} python-pip #Python
 $install perl
-wget -qO- $LEINURL | sh #Leiningen build of Clojure
+wget -O /bin/lein $LEINURL && chmod +x /bin/lein #Leiningen build of Clojure
 $install esl-erlang elixir #Erlang/Elixir (from Erlang Solutions)
 
 #Development
