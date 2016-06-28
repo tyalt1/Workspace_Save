@@ -46,6 +46,7 @@ $install chromium-browser
 $install build-essential #gcc, g++, make, and some libs
 $install oracle-java8-installer #Java
 $install python{,3} idle{,3} python-pip #Python
+pip install -U pip #upgrade
 $install perl
 wget -O /bin/lein $LEINURL && chmod +x /bin/lein #Leiningen build of Clojure
 $install esl-erlang elixir #Erlang/Elixir (from Erlang Solutions)
