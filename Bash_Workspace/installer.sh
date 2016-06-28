@@ -17,7 +17,7 @@ install="apt-get install $flags"
 
 LEINURL=https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
 ERLANGURL=https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb
-DOKCERURL=https://get.docker.com/
+DOCKERURL=https://get.docker.com/
 REBARURL=https://s3.amazonaws.com/rebar3/rebar3
 
 #Add repositories
