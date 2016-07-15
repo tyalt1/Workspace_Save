@@ -82,6 +82,7 @@ git config --global core.editor vim
 git config --global push.default current
 git config --global alias.ls 'log --decorate --oneline --graph --all -15' #Alternative to git log
 git config --global alias.s 'status --short' #Alternative to git status
+git config --global alias.diffs 'diff --staged'
 git config --global alias.edit 'config --global --edit' #Edit config page in default editor
 git config --global alias.restart 'reset --hard' #Resets to last commit
 git config --global alias.rewind 'reset HEAD~' #Undoes last commit
