@@ -1,11 +1,9 @@
 -module(counter).
--export([start/0, start/1, inc/1, dec/1, terminate/1, get/1]).
-
+-compile(export_all).
 % Example of interprocess communication
 
-start() -> start(0);
-start(N) ->
-  spawn_link(?MODULE, loop, [N]).
+start() -> start(0).
+start(N) -> spawn_link(?MODULE, loop, [N]).
 
 inc(Pid) -> Pid ! inc, ok.
 dec(Pid) -> Pid ! dec, ok.
@@ -19,12 +17,12 @@ get(Pid) ->
   end.
 
 loop(N) ->
-  receive
-    inc -> NewN = N+1;
-    dec -> NewN = N-1;
+  NewN = receive
+    inc -> N+1;
+    dec -> N-1;
     %so on...
     terminate -> exit(terminate);
-    {get, From} -> From ! (NewN = N)
-    _ -> undefined
+    {get, From} -> From ! N;
+    _ -> N % noop for unhandled request
   end,
   loop(NewN).
