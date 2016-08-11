@@ -14,7 +14,7 @@ defimpl Blank, for: Tuple do
   def is_blank(_), do: false
 end
 
-defimpl Blank, for: Map, do
+defimpl Blank, for: Map do
   def is_blank(m), do: map_size(m) == 0
 end
 
@@ -26,7 +26,7 @@ defmodule User do
   @derive Blank #use Any impl for Blank
 
   #or implment your own
-  defimpl Blank, for: __MODULE__, do
+  defimpl Blank, for: __MODULE__ do
     def is_blank(_), do: false
   end
 
