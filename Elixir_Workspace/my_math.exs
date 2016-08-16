@@ -44,21 +44,15 @@ defmodule MyMath do
   def divisors(n), do: factors(n) -- [n]
 
   def digit_list(n, base \\ 10), do: digit_list(n, base, [])
+  defp digit_list(n, base, acc) when n < base, do: [n | acc]
   defp digit_list(n, base, acc) do
-    if n < base do
-      [n | acc]
-    else
-      digit_list(div(n,base), base, [rem(n, base) | acc])
-    end
+    digit_list(div(n,base), base, [rem(n, base) | acc])
   end
 
   def from_digit_list(digits, base \\ 10), do: from_digit_list(digits, base, 0)
-  defp from_digit_list(digits=[head|rest], base, n) do
-    if Enum.empty?(digits) do
-      n
-    else
-      from_digit_list(rest, base, (n * base) + head)
-    end
+  defp from_digit_list([], _base, n) , do: n
+  defp from_digit_list([first|rest], base, n) do
+    from_digit_list(rest, base, (n * base) + first)
   end
 
   def digit_count(n), do: n |> digit_list |> length
@@ -69,3 +63,4 @@ MyMath.prime_stream |> Enum.take(10) |> IO.inspect
 MyMath.factors(20) |> IO.inspect
 MyMath.divisors(20) |> IO.inspect
 MyMath.digit_list(10034) |> IO.inspect
+MyMath.from_digit_list([1,0,0,3,4]) |> IO.inspect
