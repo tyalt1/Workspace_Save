@@ -1,0 +1,7 @@
+{description, "A basic supervisor."}.
+{variables, [
+    {name, "gen_sup", "Name of the supervisor, prepended with _sup suffix"}
+]}.
+
+{dir, "src"}.
+{template, "gen_sup.erl", "src/{{name}}_sup.erl"}.
