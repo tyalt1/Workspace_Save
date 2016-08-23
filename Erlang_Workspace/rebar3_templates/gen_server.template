@@ -1,7 +1,0 @@
-{description, "A basic gen_server."}.
-{variables, [
-    {name, "gen_server", "Name of the server, prepended with _server suffix"}
-]}.
-
-{dir, "src"}.
-{template, "gen_server.erl", "src/{{name}}_server.erl"}.
