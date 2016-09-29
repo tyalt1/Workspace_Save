@@ -4,20 +4,13 @@
 -export([start_link/0, start_link/1]).
 -export([inc/1, dec/1, get/1, kill/1]).
 
+% ----- Public -----
 start_link() -> start_link(0).
 start_link(N) -> erlang:spawn_link(fun()-> loop(N) end).
 
-inc(Pid) ->
-  Pid ! inc,
-  ok.
-
-dec(Pid) ->
-  Pid ! dec,
-  ok.
-
-kill(Pid) ->
-  Pid ! kill,
-  ok.
+inc(Pid) -> Pid ! inc, ok.
+dec(Pid) -> Pid ! dec, ok.
+kill(Pid) -> Pid ! kill, ok.
 
 get(Pid) ->
   Pid ! {get, self()},
@@ -26,7 +19,7 @@ get(Pid) ->
     _ -> error(interference)
   end.
 
-% -----
+% ----- Private -----
 loop(N) ->
   NewN = receive
     inc -> N+1;
